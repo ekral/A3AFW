@@ -2,7 +2,7 @@
 
 ### WpfAppCounter
 
-- Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota změna textu předávala hned při editaci textu a ne až pro ztrátě fokusu
+- Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota měněného textu předávala hned při editaci textu a ne až pro ztrátě fokusu
 ```sh
 <TextBox Text="{Binding Maximum, UpdateSourceTrigger=PropertyChanged}" />
 ```
