@@ -23,5 +23,11 @@ dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteC
   
 ### WpfAppStudents 
 
-  - Import a HTML file and watch it magically convert to Markdown
+  - Ukázka zjednodušené verze [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/RelayCommand.cs), která jen volá metodu bez parametru pomocí delegátu.
+  ```sh
+public void Execute(object parameter)
+{
+    _action?.Invoke();
+}
+```
   - Drag and drop images (requires your Dropbox account be linked)
