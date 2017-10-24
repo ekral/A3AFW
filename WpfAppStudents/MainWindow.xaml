@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfAppStudents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppStudents"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" Grid.Row="0" ItemsSource = "{Binding Studenti}" SelectedItem="{Binding SelectedStudent}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Jmeno}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBlock Text="{Binding SelectedStudent.Id}"/>
+            <TextBlock Text="{Binding SelectedStudent.Jmeno}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock Text="Editace jména aktuálního studenta" />
+            <TextBox Text="{Binding JmenoEdit}" />
+            <Button Command="{Binding CommandJmenoEdit}" Content="Změň jméno studenta"/>
+            <TextBlock Text="Přidej nového studenta" />
+            <TextBox Text="{Binding JmenoNove}" />
+            <Button Command="{Binding CommandNovyStudent}" Content="Vytvoř nového studenta"/>
+        </StackPanel>
+    </Grid>
+</Window>
