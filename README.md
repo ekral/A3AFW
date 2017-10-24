@@ -9,8 +9,11 @@
 
 ```sh
 private Action<object> _action;
-...
-_action?.Invoke(parameter);
+
+public void Execute(object parameter)
+{
+    _action?.Invoke(parameter);
+}
 ```
 
 - Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota měněného textu předávala hned při editaci textu a ne až pro ztrátě fokusu
