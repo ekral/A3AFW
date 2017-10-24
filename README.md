@@ -2,6 +2,17 @@
 
 ### WpfAppCounter
 
+- Ukázka použitím atributu **CommandParamter** pro předávání parametrů
+```sh
+<Button Content="Přičti 1" Command="{Binding CommandZmena}" CommandParameter="1" />
+```
+
+```sh
+private Action<object> _action;
+...
+_action?.Invoke(parameter);
+```
+
 - Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota měněného textu předávala hned při editaci textu a ne až pro ztrátě fokusu
 ```sh
 <TextBox Text="{Binding Maximum, UpdateSourceTrigger=PropertyChanged}" />
