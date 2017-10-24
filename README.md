@@ -20,7 +20,7 @@ private bool MuzeZmenit()
 ```sh
 dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
 ```
-- Ukázka nových vlastností jazyka C# 7, *Out variables* a *Is-expressions with patterns*   
+- Ukázka nových vlastností jazyka C# 7: *Is-expressions with patterns* a *Out variables* 
 ```sh
 if (param is string retezec)
 {
