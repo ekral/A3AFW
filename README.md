@@ -1,5 +1,24 @@
 # A3AFW Application frameworks
 
+### WpfAppStudents 
+
+  - Ukázka zjednodušené verze [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/RelayCommand.cs), která jen volá metodu bez parametru pomocí delegátu.
+```sh
+private Action _action;  
+
+public void Execute(object parameter)
+{
+    _action?.Invoke();
+}
+```
+- Ukázka použití kolekce ObservableCollection jako typu property pro bindování, která provádí notifikaci o tom, že došlo k přidání, odebrání nebo změně všech jejich prvků. 
+
+```sh
+public ObservableCollection<Student> Studenti { get; set; }
+```
+
+- Pokud chceme, aby se aktualizovalo zobrazení property jednotlivých položkách kolekce, tak musí i typ položky implementovat rohraní INotifyPropertyChange, příkladem je třída [Student](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/Student.cs).
+
 ### WpfAppCounter
 
 - Ukázka použití atributu **CommandParamter** pro předávání parametrů
@@ -44,13 +63,3 @@ if (param is string retezec)
     }
 }
 ```
-### WpfAppStudents 
-
-  - Ukázka zjednodušené verze [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/RelayCommand.cs), která jen volá metodu bez parametru pomocí delegátu.
-  ```sh
-public void Execute(object parameter)
-{
-    _action?.Invoke();
-}
-```
-  - Drag and drop images (requires your Dropbox account be linked)
