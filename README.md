@@ -6,7 +6,7 @@
 ```sh
 <TextBox Text="{Binding Maximum, **UpdateSourceTrigger=PropertyChanged}"** />
 ```
-  - Ukázka specifické implementace implementace property **CanChange** v [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppCounter/MyCommand.cs)
+  - Ukázka specifické implementace implementace property **CanChange** v [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppCounter/MyCommand.cs), díky které můžeme zakázat provedení *Commandu* a u *Buttonu* dojde také automaticky k nastavení property **IsEnabled** na false. 
   
   ```sh
 CommandZmena = new MyCommand(Zmen, MuzeZmenit);
