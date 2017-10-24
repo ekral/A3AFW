@@ -16,6 +16,7 @@ private bool MuzeZmenit()
     return Pocitadlo < Maximum;
 }
 ```
+-- Pokud dochází ke změně hodnoty mimo UI, například s pomocí časovače, můžeme vynutit aby si tlačítko načetlo hodnotu **CanChange**.
 
   
 ### WpfAppStudents 
