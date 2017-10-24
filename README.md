@@ -8,6 +8,15 @@
 ```
   - Ukázka specifické implementace implementace property **CanChange** v [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppCounter/MyCommand.cs)
   
+  ```sh
+CommandZmena = new MyCommand(Zmen, MuzeZmenit);
+
+private bool MuzeZmenit()
+{
+    return Pocitadlo < Maximum;
+}
+```
+
   
 ### WpfAppStudents 
 
