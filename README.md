@@ -30,7 +30,7 @@ private bool MuzeZmenit()
     return Pocitadlo < Maximum;
 }
 ```
-- Pokud dochází ke změně hodnoty mimo UI, například s pomocí časovače, můžeme vynutit aby si tlačítko načetlo hodnotu **CanChange**.
+- Pokud dochází ke změně návratové hodnoty metody **CanChange** mimo UI, například s pomocí časovače, můžeme vynutit aby si tlačítko znovu zavolalo metodu **CanChange**.
 ```sh
 dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
 ```
