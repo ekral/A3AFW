@@ -2,7 +2,7 @@
 
 ### WpfAppCounter
 
-- Ukázka použitím atributu **CommandParamter** pro předávání parametrů
+- Ukázka použití atributu **CommandParamter** pro předávání parametrů
 ```sh
 <Button Content="Přičti 1" Command="{Binding CommandZmena}" CommandParameter="1" />
 ```
