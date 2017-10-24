@@ -4,7 +4,7 @@
 
 - Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota změna textu předávala hned při editaci textu a ne až pro ztrátě fokusu
 ```sh
-<TextBox Text="{Binding Maximum, **UpdateSourceTrigger=PropertyChanged}"** />
+<TextBox Text="{Binding Maximum, UpdateSourceTrigger=PropertyChanged}" />
 ```
 - Ukázka specifické implementace implementace property **CanChange** v [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppCounter/MyCommand.cs), díky které můžeme zakázat provedení *Commandu* a u *Buttonu* dojde také automaticky k nastavení property **IsEnabled** na false. 
   
@@ -20,7 +20,16 @@ private bool MuzeZmenit()
 ```sh
 dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
 ```
-  
+- Ukázka nových vlastností jazyka C# 7, *Out variables* a *Is-expressions with patterns*   
+```sh
+if (param is string retezec)
+{
+    if (int.TryParse(retezec, out int cislo))
+    {
+        Pocitadlo += cislo;
+    }
+}
+```
 ### WpfAppStudents 
 
   - Ukázka zjednodušené verze [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/RelayCommand.cs), která jen volá metodu bez parametru pomocí delegátu.
