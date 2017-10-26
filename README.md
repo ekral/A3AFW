@@ -22,7 +22,7 @@ public ObservableCollection<Student> Studenti { get; set; }
 ### WpfAppCounter
 
 - Ukázka použití atributu **CommandParameter** pro předávání parametrů
-```XAML
+```c#
 <Button Content="Přičti 1" Command="{Binding CommandZmena}" CommandParameter="1" />
 ```
 
