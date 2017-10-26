@@ -50,7 +50,7 @@ private bool MuzeZmenit()
 }
 ```
 - Pokud dochází ke změně návratové hodnoty metody **CanChange** mimo UI, například s pomocí časovače, můžeme informovat tlačítko aby si zavolalo metodu **CanChange** a zjistilo její návratovou hodnotu.
-```XAML
+```c#
 dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
 ```
 - Ukázka nových vlastností jazyka C# 7: *Is-expressions with patterns* a *Out variables* 
