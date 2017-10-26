@@ -3,7 +3,7 @@
 ### WpfAppStudents 
 
   - Ukázka zjednodušené verze [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/RelayCommand.cs), která jen volá metodu bez parametru pomocí delegátu.
-```sh
+```c#
 private Action _action;  
 
 public void Execute(object parameter)
