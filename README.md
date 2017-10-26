@@ -13,7 +13,7 @@ public void Execute(object parameter)
 ```
 - Ukázka použití kolekce ObservableCollection jako typu property pro bindování, která provádí notifikaci o tom, že došlo k přidání, odebrání nebo změně všech jejich prvků. 
 
-```sh
+```c#
 public ObservableCollection<Student> Studenti { get; set; }
 ```
 
@@ -22,11 +22,11 @@ public ObservableCollection<Student> Studenti { get; set; }
 ### WpfAppCounter
 
 - Ukázka použití atributu **CommandParameter** pro předávání parametrů
-```sh
+```XAML
 <Button Content="Přičti 1" Command="{Binding CommandZmena}" CommandParameter="1" />
 ```
 
-```sh
+```c#
 private Action<object> _action;
 
 public void Execute(object parameter)
@@ -36,12 +36,12 @@ public void Execute(object parameter)
 ```
 
 - Ukázka použití atributu **UpdateSourceTrigger** tak aby se hodnota měněného textu předávala hned při editaci textu a ne až pro ztrátě fokusu
-```sh
+```XAML
 <TextBox Text="{Binding Maximum, UpdateSourceTrigger=PropertyChanged}" />
 ```
 - Ukázka WPF specifické implementace implementace property **CanChange** v [RelayCommandu](https://github.com/ekral/A3AFW/blob/master/WpfAppCounter/MyCommand.cs), díky které můžeme zakázat provedení *Commandu* a u *Buttonu* dojde také automaticky k nastavení property **IsEnabled** na false. 
   
-```sh
+```c#
 CommandZmena = new MyCommand(Zmen, MuzeZmenit);
 
 private bool MuzeZmenit()
