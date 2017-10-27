@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace WpfAppCounter
 {
-    public class MyCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private Action<object> _action;
         private Func<bool> _canExecute;
@@ -33,13 +33,13 @@ namespace WpfAppCounter
             }
         }
 
-        public MyCommand(Action<object> action, Func<bool> canExecute)
+        public RelayCommand(Action<object> action, Func<bool> canExecute)
         {
             _action = action;
             _canExecute = canExecute;
         }
 
-        public MyCommand(Action<object> action) : this(action, null)
+        public RelayCommand(Action<object> action) : this(action, null)
         {
 
         }

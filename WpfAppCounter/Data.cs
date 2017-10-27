@@ -33,15 +33,15 @@ namespace WpfAppCounter
         }
 
 
-        public MyCommand CommandZmena { get; set; }
-        public MyCommand CommandReset { get; set; }
+        public RelayCommand CommandZmena { get; set; }
+        public RelayCommand CommandReset { get; set; }
 
         public Data()
         {
             Maximum = 10;
             Pocitadlo = 0;
-            CommandZmena = new MyCommand(Zmen, MuzeZmenit);
-            CommandReset = new MyCommand(Reset);
+            CommandZmena = new RelayCommand(Zmen, MuzeZmenit);
+            CommandReset = new RelayCommand(Reset);
 
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
