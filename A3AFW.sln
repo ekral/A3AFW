@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppStudents", "WpfAppStu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppCounter", "WpfAppCounter\WpfAppCounter.csproj", "{B209F740-79E6-49BD-9B47-9218CA6F0588}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppListOfNumbers", "WpfAppListOfNumbers\WpfAppListOfNumbers.csproj", "{DEC6E8F4-14D3-4D98-8FFA-01D6587774EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B209F740-79E6-49BD-9B47-9218CA6F0588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B209F740-79E6-49BD-9B47-9218CA6F0588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B209F740-79E6-49BD-9B47-9218CA6F0588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC6E8F4-14D3-4D98-8FFA-01D6587774EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC6E8F4-14D3-4D98-8FFA-01D6587774EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC6E8F4-14D3-4D98-8FFA-01D6587774EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC6E8F4-14D3-4D98-8FFA-01D6587774EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

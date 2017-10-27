@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfAppAhoj.Properties
+namespace WpfAppListOfNumbers.Properties
 {
 
 

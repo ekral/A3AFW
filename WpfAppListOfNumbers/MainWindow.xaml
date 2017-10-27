@@ -1,9 +1,9 @@
-﻿<Window x:Class="WpfAppAhoj.MainWindow"
+﻿<Window x:Class="WpfAppListOfNumbers.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfAppAhoj"
+        xmlns:local="clr-namespace:WpfAppListOfNumbers"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <!--Po stisknutí tlačítka zobrazte v TextBlocku text Ahoj, vyuzijte Command a bindovani-->

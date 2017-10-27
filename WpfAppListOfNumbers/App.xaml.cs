@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfAppAhoj
+namespace WpfAppListOfNumbers
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -17,7 +17,7 @@ namespace WpfAppAhoj
         {
             base.OnStartup(e);
             Data data = new Data();
-            MainWindow window = new WpfAppAhoj.MainWindow() { DataContext = data };
+            MainWindow window = new WpfAppListOfNumbers.MainWindow() { DataContext = data };
             window.Show();
         }
     }
