@@ -39,10 +39,6 @@ namespace WpfAppCounter
             _canExecute = canExecute;
         }
 
-        public RelayCommand(Action<object> action) : this(action, null)
-        {
-
-        }
 
         public void OnCanExecuteChanged()
         {

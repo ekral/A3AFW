@@ -41,7 +41,7 @@ namespace WpfAppCounter
             Maximum = 10;
             Pocitadlo = 0;
             CommandZmena = new RelayCommand(Zmen, MuzeZmenit);
-            CommandReset = new RelayCommand(Reset);
+            CommandReset = new RelayCommand(Reset, null);
 
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += (sender, e) => { ++Pocitadlo; CommandZmena.OnCanExecuteChanged(); };
