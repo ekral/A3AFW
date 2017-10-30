@@ -68,7 +68,7 @@ Studenti s pokročilymi styly. V projektu jsou ukázky následujících témat:
 - Resources
 - DataTemplates
 
-###Třída Style
-Pomocí třídy Style můžeme sdílet nastavení properties (ale také resources a eventů) mezi instancemi konkrétního typu. Objekt typu *Style* se obsahuje kolekci jednoho nebo více objektu typu *Setter*, kdy každý Setter má atribut *Property* a *Value*. Property je název propeperty elementu na který chceme styl aplikovat a Value je jeho hodnota.
+### Třída [Style](https://docs.microsoft.com/en-us/dotnet/api/system.windows.style?view=netframework-4.7.1)
+Pomocí třídy Style můžeme sdílet nastavení properties (ale také resources a eventů) mezi instancemi konkrétního typu. Objekt typu **Style** se obsahuje kolekci jednoho nebo více objektu typu **Setter**, kdy každý Setter má atribut **Property** a **Value**. Property je název propeperty elementu na který chceme styl aplikovat a Value je jeho hodnota.
 
 
