@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WpfAppStudentTemplate
+{
+    public class Data
+    {
+      
+        private Student _selectedStudent;
+
+        public Student SelectedStudent
+        {
+            get { return _selectedStudent; }
+            set { _selectedStudent = value; }
+        }
+
+        public ObservableCollection<Student> Studenti { get; set; }
+
+        public Data()
+        {
+            
+            Studenti = new ObservableCollection<Student>()
+            {
+                new Student() { Id = 1, Jmeno = "Erik", Prijmeni = "Kral", Zapsany = true},
+                new Student() { Id = 2, Jmeno = "Petr", Prijmeni = "Capek", Zapsany = true},
+                new Student() { Id = 3, Jmeno = "Karel", Prijmeni = "Novy", Zapsany = false}
+            };
+        }
+
+      
+    }
+}

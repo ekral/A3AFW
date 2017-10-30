@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfAppStudentTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppStudentTemplate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:StudentTemplateSelector x:Key="studentSelector" />
+        <DataTemplate x:Key="StudentTemplateBlue">
+            <StackPanel>
+                <TextBox Background="Blue" Text="{Binding Id}" />
+                <TextBlock Text="{Binding Jmeno}" />
+                <TextBlock Text="{Binding Prijmeni}">
+                </TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="StudentTemplateRed">
+            <StackPanel>
+                <TextBlock Background="Red" Text="{Binding Id}" />
+                <TextBlock Text="{Binding Jmeno}" />
+                <TextBlock Text="{Binding Prijmeni}"/>
+                <Button Content="Zapiš" Command="{Binding CommandZapis}" />
+            </StackPanel>
+        </DataTemplate>
+      
+    </Window.Resources>
+    <StackPanel>
+        <ListBox ItemTemplateSelector="{StaticResource studentSelector}" ItemsSource="{Binding Studenti}" SelectedItem="{Binding Student}" />
+    </StackPanel>
+</Window>
