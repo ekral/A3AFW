@@ -24,9 +24,31 @@
                 <Button Content="Zapiš" Command="{Binding CommandZapis}" />
             </StackPanel>
         </DataTemplate>
-      
+
+        <DataTemplate x:Key="StudentDataTemplateTrigger">
+            <ContentControl Content="{Binding }">
+                <ContentControl.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+
+                        <!-- Vychozi Template -->
+                        <Setter Property="ContentTemplate" Value="{StaticResource StudentTemplateBlue}" />
+
+                        <!-- Zmena Template pomoci DataTriggeru -->
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Zapsany}" Value="False">
+                                <Setter Property="ContentTemplate" Value="{StaticResource StudentTemplateRed}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+        </DataTemplate>
+
     </Window.Resources>
     <StackPanel>
+        <!--ItemTemplateSelector se neaktualizuje pri NotifyPropertyChange-->
         <ListBox ItemTemplateSelector="{StaticResource studentSelector}" ItemsSource="{Binding Studenti}" SelectedItem="{Binding Student}" />
+        <!--S vyuzitim DataTriggeru a Content control muzeme DataTemplate menit bez ItemTemplateSelector-->
+        <ListBox ItemTemplate="{StaticResource StudentDataTemplateTrigger}" ItemsSource="{Binding Studenti}" SelectedItem="{Binding Student}" />
     </StackPanel>
 </Window>
