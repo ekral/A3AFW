@@ -99,7 +99,7 @@ Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a mí
 </StackPanel>
 ```
 ### XAML Resources
-Každý element má property [Resources](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-resources#styles-datatemplates-and-implicit-keys), která obsahuje obsahuje objekty, které se pak používají na různých místech aplikace. Typickým příkladem jsou objekty typu *Style*, *Brush* a *DataTemplate*. Objekty se typicky přidávájí do *Resources* elementu *Application* pokud je chceme používat v celé aplikaci, nebo do *Resources* elementu *Window*, pokud je chceme používat pouze v jednom okně aplikace. Každý objekt v Resources musí mít atribut ```XAMLx:Key```.
+Každý element má property [Resources](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-resources#styles-datatemplates-and-implicit-keys), která obsahuje obsahuje objekty, které se pak používají na různých místech aplikace. Typickým příkladem jsou objekty typu *Style*, *Brush* a *DataTemplate*. Objekty se typicky přidávájí do *Resources* elementu *Application* pokud je chceme používat v celé aplikaci, nebo do *Resources* elementu *Window*, pokud je chceme používat pouze v jednom okně aplikace. Každý objekt v Resources musí mít atribut ```XAML x:Key```.
 
 V následujícím příkladě přidáme do *Resources* elementu *Window* objekt typu *SolidColorBrush*, který použijeme pro výplň objektu typu *Ellipse* a objekt typu *Style*, použijme na objekt typu *TextBlock*. 
 
