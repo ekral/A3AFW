@@ -100,3 +100,22 @@ Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a mí
 ```
 ### XAML Resources
 Každý element má property [Resources](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-resources#styles-datatemplates-and-implicit-keys), která obsahuje obsahuje objekty, které se pak používají na různých místech aplikace. Typickým příkladem jsou objekty typu *Style*, *Brush* a *DataTemplate*. Objekty se typicky přidávájí do *Resources* elementu *Application* pokud je chceme používat v celé aplikaci, nebo do *Resources* elementu *Window*, pokud je chceme používat pouze v jednom okně aplikace. Každý objekt v Resources musí mít atribut ```XAMLx:Key```.
+
+V následujícím příkladě přidáme do *Resources* elementu *Window* objekt typu *SolidColorBrush*, který použijeme pro výplň objektu typu *Ellipse* a objekt typu *Style*, použijme na objekt typu *TextBlock*. 
+
+```XAML
+<Window x:Class="WpfAppStudentTemplates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <SolidColorBrush x:Key="ModryStetec" Color="Blue" />
+        <Style TargetType="TextBlock" x:Key="StyleZlutePozadi" >
+            <Setter Property="Background" Value="LightYellow" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Style="{StaticResource ResourceKey=StyleZlutePozadi}" Text="Ahoj" />
+        <Ellipse Width="30" Height="30" Fill="{StaticResource ModryStetec}"/>
+    </StackPanel>
+</Window>
+```
