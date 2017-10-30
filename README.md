@@ -23,6 +23,7 @@ public ObservableCollection<Student> Studenti { get; set; }
 - Ukázka použití atributu **CommandParameter** pro předávání parametrů
 ```c#
 <Button Content="Přičti 1" Command="{Binding CommandZmena}" CommandParameter="1" />
+
 ```
 
 ```c#
@@ -85,3 +86,15 @@ Objekt třídy Style se typicky přidáva do kolekce **Resources** kořenového 
 </StackPanel>
 ```
 Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a místo ```XAML Property="TextBlock.Background"``` napsat jen ```XAML Property="Background"```
+```XAML
+<StackPanel>
+    <StackPanel.Resources>
+        <Style TargetType="TextBlock" x:Key="StyleBlue" >
+            <Setter Property="Background" Value="LightBlue" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </StackPanel.Resources>
+    <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Ahoj" />
+    <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Jak se máš" />
+</StackPanel>
+```
