@@ -18,7 +18,6 @@ public ObservableCollection<Student> Studenti { get; set; }
 ```
 
 - Ukázka použití *PropertyChange* u položky kolekce. Pokud chceme, aby se aktualizovalo zobrazení property jednotlivých položkách kolekce, tak musí i typ položky implementovat rohraní INotifyPropertyChange, příkladem je třída [Student](https://github.com/ekral/A3AFW/blob/master/WpfAppStudents/Student.cs).
-
 ### WpfAppCounter
 
 - Ukázka použití atributu **CommandParameter** pro předávání parametrů
@@ -63,3 +62,13 @@ if (param is string retezec)
     }
 }
 ```
+## WpfAppStudentTemplates
+Studenti s pokročilymi styly. V projektu jsou ukázky následujících témat:
+- Style
+- Resources
+- DataTemplates
+
+###Třída Style
+Pomocí třídy Style můžeme sdílet nastavení properties (ale také resources a eventů) mezi instancemi konkrétního typu. Objekt typu *Style* se obsahuje kolekci jednoho nebo více objektu typu *Setter*, kdy každý Setter má atribut *Property* a *Value*. Property je název propeperty elementu na který chceme styl aplikovat a Value je jeho hodnota.
+
+
