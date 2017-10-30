@@ -85,7 +85,7 @@ Objekt třídy Style se typicky přidáva do kolekce **Resources** kořenového 
     <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Jak se máš" />
 </StackPanel>
 ```
-Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a místo ```XAML Property="TextBlock.Background"``` napsat jen ```XAML Property="Background"```
+Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a místo ```XAML Property="TextBlock.Background"``` napsat jen ```XAML Property="Background"```.
 ```XAML
 <StackPanel>
     <StackPanel.Resources>
