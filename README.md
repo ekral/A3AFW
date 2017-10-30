@@ -74,13 +74,14 @@ Pomocí třídy [Style](https://docs.microsoft.com/en-us/dotnet/api/system.windo
 Objekt třídy Style se typicky přidáva do kolekce **Resources** kořenového elementu *Window* nebo *Application*. V následujícím příkladu jej ale pro zjednodušení přidáváme do *Resources* elementu *StackPanel*. Konkrétně vytváříme styl s názvem *StyleBlue* který nastaví *Background* a *Foreground* třídy TextBlock. Tento styl potom aplikujeme na dva elementy **TextBlock** pomocí atributu **Style**.
 ```XAML
 <StackPanel>
-        <StackPanel.Resources>
-            <Style x:Key="StyleBlue" >
-                <Setter Property="TextBlock.Background" Value="LightBlue" />
-                <Setter Property="TextBlock.Foreground" Value="Black" />
-            </Style>
-        </StackPanel.Resources>
-        <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Ahoj" />
-        <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Jak se máš" />
-    </StackPanel>
+    <StackPanel.Resources>
+        <Style x:Key="StyleBlue" >
+            <Setter Property="TextBlock.Background" Value="LightBlue" />
+            <Setter Property="TextBlock.Foreground" Value="Black" />
+        </Style>
+    </StackPanel.Resources>
+    <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Ahoj" />
+    <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Jak se máš" />
+</StackPanel>
 ```
+Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a místo ```XAML Property="TextBlock.Background"``` napsat jen ```XAML Property="Background"```
