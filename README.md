@@ -98,3 +98,5 @@ Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a mí
     <TextBlock Style="{StaticResource ResourceKey=StyleBlue}" Text="Jak se máš" />
 </StackPanel>
 ```
+### XAML Resources
+Každý element má property **Resources**, který obsahuje objekty, které se pak používají na různých místech aplikace. Typickým příkladem jsou objekty typu *Style*, *Brush* a *DataTemplate*. Objekty se typicky přidávájí do *Resources* elementu *Application* pokud je chceme používat v celé aplikaci, nebo do *Resources* elementu *Window*, pokud je chceme používat pouze v jednom okně aplikace.
