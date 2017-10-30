@@ -119,3 +119,7 @@ V následujícím příkladě přidáme do *Resources* elementu *Window* objekt 
     </StackPanel>
 </Window>
 ```
+Todo:
+- markup extension StaticResource a DynamicResource
+- DataTemplate
+- Conditional DataTemplate
