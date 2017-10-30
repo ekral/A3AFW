@@ -100,7 +100,7 @@ Pomocí atributu **TargetType** muzeme zapis elementu *TextBlock* zkrátit a mí
 ```
 ### XAML Resources
 Každý element má property [Resources](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-resources#styles-datatemplates-and-implicit-keys), která obsahuje obsahuje objekty, které se pak používají na různých místech aplikace. Typickým příkladem jsou objekty typu *Style*, *Brush* a *DataTemplate*. Objekty se typicky přidávájí do *Resources* elementu *Application* pokud je chceme používat v celé aplikaci, nebo do *Resources* elementu *Window*, pokud je chceme používat pouze v jednom okně aplikace. Každý objekt v Resources musí mít atribut ```XAML x:Key```.
-
+K přístupu k objektům v *Resources* potom používáme Markup Extension **StaticResource** nebo **DynamicResource**. *StaticResource* používáme, pokud předpokládáme, že se hodnota objektu za běhu programu nemění a stačí ho načíst jen jednou na začátku programu, například *Style* zůstává pořád stejný. *DynamicResource* potom používáme, když očekáváme, že se objekt bude v průběhu programu měnit nebo hodnota není známá před spuštění programu (například systémové barvy operačního systému).
 V následujícím příkladě přidáme do *Resources* elementu *Window* objekt typu *SolidColorBrush*, který použijeme pro výplň objektu typu *Ellipse* a objekt typu *Style*, použijme na objekt typu *TextBlock*. 
 
 ```XAML
@@ -120,6 +120,5 @@ V následujícím příkladě přidáme do *Resources* elementu *Window* objekt 
 </Window>
 ```
 Todo:
-- markup extension StaticResource a DynamicResource
 - DataTemplate
 - Conditional DataTemplate
