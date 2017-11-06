@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppStudentTemplate"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <local:StudentTemplateSelector x:Key="studentSelector" />
-        <DataTemplate x:Key="StudentTemplateBlue">
+        <DataTemplate x:Key="StudentTemplateGreen">
             <StackPanel>
-                <TextBox Background="Blue" Text="{Binding Id}" />
+                <TextBlock Foreground="Green" Text="{Binding Id}" />
                 <TextBlock Text="{Binding Jmeno}" />
                 <TextBlock Text="{Binding Prijmeni}">
                 </TextBlock>
@@ -18,7 +19,7 @@
         </DataTemplate>
         <DataTemplate x:Key="StudentTemplateRed">
             <StackPanel>
-                <TextBlock Background="Red" Text="{Binding Id}" />
+                <TextBlock Foreground="Red" Text="{Binding Id}" />
                 <TextBlock Text="{Binding Jmeno}" />
                 <TextBlock Text="{Binding Prijmeni}"/>
                 <Button Content="Zapiš" Command="{Binding CommandZapis}" />
@@ -31,11 +32,11 @@
                     <Style TargetType="{x:Type ContentControl}">
 
                         <!-- Vychozi Template -->
-                        <Setter Property="ContentTemplate" Value="{StaticResource StudentTemplateBlue}" />
+                        <Setter Property="ContentTemplate" Value="{StaticResource StudentTemplateGreen}" />
 
                         <!-- Zmena Template pomoci DataTriggeru -->
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding Zapsany}" Value="False">
+                            <DataTrigger Binding="{Binding JeZapsany}" Value="False">
                                 <Setter Property="ContentTemplate" Value="{StaticResource StudentTemplateRed}" />
                             </DataTrigger>
                         </Style.Triggers>
@@ -50,5 +51,29 @@
         <ListBox ItemTemplateSelector="{StaticResource studentSelector}" ItemsSource="{Binding Studenti}" SelectedItem="{Binding Student}" />
         <!--S vyuzitim DataTriggeru a Content control muzeme DataTemplate menit bez ItemTemplateSelector-->
         <ListBox ItemTemplate="{StaticResource StudentDataTemplateTrigger}" ItemsSource="{Binding Studenti}" SelectedItem="{Binding Student}" />
+        <ListBox ItemsSource="{Binding Studenti}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="{Binding Jmeno}" />
+                        <TextBlock Text="{Binding Prijmeni}"/>
+                        <Button Background="LightBlue" Content="Zapiš" Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}, Path=DataContext.CommandZapisData}" CommandParameter="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Name="ListBoxStudenti1" ItemsSource="{Binding Studenti}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="{Binding Jmeno}" />
+                        <TextBlock Text="{Binding Prijmeni}"/>
+                        <Button Background="LightYellow" Content="Zapiš" Command="{Binding ElementName=ListBoxStudenti1, Path=DataContext.CommandZapisData}" CommandParameter="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </StackPanel>
 </Window>

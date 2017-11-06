@@ -14,10 +14,10 @@ namespace WpfAppStudentTemplate
 
         private bool _zapsany;
 
-        public bool Zapsany
+        public bool JeZapsany
         {
             get { return _zapsany; }
-            set { _zapsany = value; OnPropertyChange(nameof(Zapsany)); }
+            set { _zapsany = value; OnPropertyChange(nameof(JeZapsany)); }
         }
 
 
@@ -30,7 +30,7 @@ namespace WpfAppStudentTemplate
 
         public void Zapis(object parameter)
         {
-            Zapsany = true;
+            JeZapsany = true;
         }
     }
 }

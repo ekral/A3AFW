@@ -20,17 +20,26 @@ namespace WpfAppStudentTemplate
 
         public ObservableCollection<Student> Studenti { get; set; }
 
+        public RelayCommand CommandZapisData { get; set; }
+
         public Data()
         {
-            
             Studenti = new ObservableCollection<Student>()
             {
-                new Student() { Id = 1, Jmeno = "Erik", Prijmeni = "Kral", Zapsany = true},
-                new Student() { Id = 2, Jmeno = "Petr", Prijmeni = "Capek", Zapsany = true},
-                new Student() { Id = 3, Jmeno = "Karel", Prijmeni = "Novy", Zapsany = false}
+                new Student() { Id = 1, Jmeno = "Erik", Prijmeni = "Kral", JeZapsany = true},
+                new Student() { Id = 2, Jmeno = "Petr", Prijmeni = "Capek", JeZapsany = true},
+                new Student() { Id = 3, Jmeno = "Karel", Prijmeni = "Novy", JeZapsany = false}
             };
+
+            CommandZapisData = new RelayCommand(Zapis, null);
         }
 
-      
+        private void Zapis(object parameter)
+        {
+            if(parameter != null && parameter is Student student)
+            {
+                student.JeZapsany = true;
+            }
+        }
     }
 }

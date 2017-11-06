@@ -16,8 +16,8 @@ namespace WpfAppStudentTemplate
 
             if (element != null && item != null && item is Student student)
             {
-                if (student.Zapsany == true)
-                    return element.FindResource("StudentTemplateBlue") as DataTemplate;
+                if (student.JeZapsany == true)
+                    return element.FindResource("StudentTemplateGreen") as DataTemplate;
                 else
                     return  element.FindResource("StudentTemplateRed") as DataTemplate;
             }
