@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfAppCounter
 {
-    class Data : INotifyPropertyChanged
+    class Data : INotifyPropertyChanged 
     {
         private int maximum;
 
