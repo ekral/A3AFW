@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppStudents", "WpfAppStudents\WpfAppStudents.csproj", "{1B600A3C-E6CF-46A0-BC24-724F8DD2489B}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppStudentTemplate", "WpfAppStudentTemplate\WpfAppStudentTemplate.csproj", "{07EAF3DE-3A1A-431A-9ABD-5521BB40FEE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppStudentDeleteTemplate", "WpfAppStudentDeleteTemplate\WpfAppStudentDeleteTemplate.csproj", "{9FBC33C0-3553-4365-AC6C-2B4B7F8880CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppBindingsAndTriggers", "WpfAppBindingsAndTriggers\WpfAppBindingsAndTriggers.csproj", "{08990D0D-FA03-4367-883B-B111691A2B2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9FBC33C0-3553-4365-AC6C-2B4B7F8880CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FBC33C0-3553-4365-AC6C-2B4B7F8880CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FBC33C0-3553-4365-AC6C-2B4B7F8880CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08990D0D-FA03-4367-883B-B111691A2B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08990D0D-FA03-4367-883B-B111691A2B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08990D0D-FA03-4367-883B-B111691A2B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08990D0D-FA03-4367-883B-B111691A2B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
