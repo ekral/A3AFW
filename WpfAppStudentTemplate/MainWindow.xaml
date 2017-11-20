@@ -70,6 +70,8 @@
                         <TextBlock Text="{Binding Id}" />
                         <TextBlock Text="{Binding Jmeno}" />
                         <TextBlock Text="{Binding Prijmeni}"/>
+                        
+                        
                         <Button Background="LightYellow" Content="Zapiš" Command="{Binding ElementName=ListBoxStudenti1, Path=DataContext.CommandZapisData}" CommandParameter="{Binding}" />
                     </StackPanel>
                 </DataTemplate>

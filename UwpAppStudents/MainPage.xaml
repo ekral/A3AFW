@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="UwpAppStudents.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UwpAppStudents"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListBox x:Name="ListBoxStudenti1" ItemsSource="{Binding Studenti}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="{Binding Jmeno}" />
+                        <TextBlock Text="{Binding Prijmeni}"/>
+                        <TextBlock Text="{Binding JeZapsany}"/>
+                        <!--Command ve tride Student-->
+                        <Button Content="Zapiš" Command="{Binding CommandZapis}" /> 
+                        <!--Command ve tride Data-->
+                        <Button Content="Odstraň" Command="{Binding ElementName=ListBoxStudenti1, Path=DataContext.CommandOdstranStudenta}" CommandParameter="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+       
+    </StackPanel>
+</Page>
