@@ -10,7 +10,6 @@ namespace UwpAppStudentsXBind
 {
     public class Data
     {
-            
         private Student _selectedStudent;
 
         public Student SelectedStudent

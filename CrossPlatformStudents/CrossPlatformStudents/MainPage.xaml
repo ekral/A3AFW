@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CrossPlatformStudents"
+             x:Class="CrossPlatformStudents.MainPage">
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+      
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                <StackLayout.Style>
+                    <Style TargetType="StackLayout">
+                        <Setter Property="BackgroundColor" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger TargetType="StackLayout" Binding="{Binding SelectedStudent}" Value="x:Null" >
+                                <Setter Property="BackgroundColor" Value="White" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="StackLayout" Binding="{Binding SelectedStudent.JeZapsany}" Value="False" >
+                                <Setter Property="BackgroundColor" Value="LightSalmon" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="StackLayout" Binding="{Binding SelectedStudent.JeZapsany}" Value="True" >
+                                <Setter Property="BackgroundColor" Value="LightGreen" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackLayout.Style>
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding SelectedStudent.Jmeno }" />
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding SelectedStudent.Prijmeni }" />
+                <Button HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Odstraň" Command="{Binding CommandOdstranSelectedStudenta}">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedStudent}" Value="{x:Null}" >
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedStudent.JeZapsany}" Value="True" >
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackLayout>
+
+            <ListView HorizontalOptions="CenterAndExpand" x:Name="ListViewStudenti" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Studenti}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Text="{Binding Jmeno }" />
+                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" Text="Zapiš" Command="{Binding BindingContext.CommandZapisStudenta, Source={x:Reference ListViewStudenti}}" CommandParameter="{Binding}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
