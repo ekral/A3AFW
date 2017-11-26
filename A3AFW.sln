@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossPlatform", "CrossPlatf
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CrossPlatformStudents\CrossPlatformStudents\CrossPlatformStudents.projitems*{04a4dbf6-bb9c-4b79-afe3-3b9702cc7faa}*SharedItemsImports = 4
 		CrossPlatformStudents\CrossPlatformStudents\CrossPlatformStudents.projitems*{17961cd9-daaa-4259-8075-5d30d12716af}*SharedItemsImports = 4
 		CrossPlatformStudents\CrossPlatformStudents\CrossPlatformStudents.projitems*{1afb2290-8a98-4410-a385-4f1dc38192fe}*SharedItemsImports = 4
 		CrossPlatformStudents\CrossPlatformStudents\CrossPlatformStudents.projitems*{3d8d7730-c4ef-428f-bbc5-22d31bc7f7e3}*SharedItemsImports = 13

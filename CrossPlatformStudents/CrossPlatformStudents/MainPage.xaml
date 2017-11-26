@@ -5,17 +5,17 @@
              x:Class="CrossPlatformStudents.MainPage">
 
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
       
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
                 <StackLayout.Style>
                     <Style TargetType="StackLayout">
                         <Setter Property="BackgroundColor" Value="White" />
@@ -32,9 +32,9 @@
                         </Style.Triggers>
                     </Style>
                 </StackLayout.Style>
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding SelectedStudent.Jmeno }" />
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding SelectedStudent.Prijmeni }" />
-                <Button HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Odstraň" Command="{Binding CommandOdstranSelectedStudenta}">
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Text="{Binding SelectedStudent.Jmeno }" />
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Text="{Binding SelectedStudent.Prijmeni }" />
+                <Button HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Text="Odstraň" Command="{Binding CommandOdstranSelectedStudenta}">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="IsEnabled" Value="True" />
@@ -51,11 +51,11 @@
                 </Button>
             </StackLayout>
 
-            <ListView HorizontalOptions="CenterAndExpand" x:Name="ListViewStudenti" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Studenti}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
+            <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="ListViewStudenti" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Studenti}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
@@ -63,8 +63,8 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Text="{Binding Jmeno }" />
-                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" Text="Zapiš" Command="{Binding BindingContext.CommandZapisStudenta, Source={x:Reference ListViewStudenti}}" CommandParameter="{Binding}"/>
+                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Text="{Binding Jmeno }" />
+                                <Button VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Text="Zapiš" Command="{Binding BindingContext.CommandZapisStudenta, Source={x:Reference ListViewStudenti}}" CommandParameter="{Binding}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
