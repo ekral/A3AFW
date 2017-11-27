@@ -13,7 +13,7 @@ namespace CrossPlatformStudents
 		public MainPage()
 		{
 			InitializeComponent();
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+    
 		}
 	}
 }
