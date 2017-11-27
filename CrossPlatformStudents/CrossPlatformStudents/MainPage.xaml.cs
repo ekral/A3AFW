@@ -12,6 +12,7 @@ namespace CrossPlatformStudents
 		public MainPage()
 		{
 			InitializeComponent();
-		}
+
+        }
 	}
 }
