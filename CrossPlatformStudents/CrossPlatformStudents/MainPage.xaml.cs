@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace CrossPlatformStudents
 {
@@ -12,6 +13,7 @@ namespace CrossPlatformStudents
 		public MainPage()
 		{
 			InitializeComponent();
+    
 		}
 	}
 }
