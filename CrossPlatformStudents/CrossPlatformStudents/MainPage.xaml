@@ -55,6 +55,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Zapiš" Command="{Binding BindingContext.CommandZapisStudenta, Source={x:Reference ListViewStudenti}}" CommandParameter="{Binding}" IsDestructive="True"/>
+                                <MenuItem Text="Odstraň" Command="{Binding BindingContext.CommandOdstranStudenta, Source={x:Reference ListViewStudenti}}" CommandParameter="{Binding}" IsDestructive="True"/>
+                            </ViewCell.ContextActions>
+
                             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />

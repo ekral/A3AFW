@@ -20,7 +20,9 @@ namespace CrossPlatformStudents
         public ObservableCollection<Student> Studenti { get; set; }
 
         public RelayCommand CommandZapisStudenta { get; set; }
+        public RelayCommand CommandOdstranStudenta { get; set; }
         public RelayCommand CommandOdstranSelectedStudenta { get; set; }
+        
 
         public Data()
         {
@@ -33,10 +35,39 @@ namespace CrossPlatformStudents
             };
 
             CommandZapisStudenta = new RelayCommand(ZapisStudenta, MuzuZapsatStudenta);
+            CommandOdstranStudenta = new RelayCommand(OdstranStudenta, MuzuOdstranitStudenta);
             CommandOdstranSelectedStudenta = new RelayCommand(OdstranSelectedStudenta, null);
 
             SelectedStudent = Studenti.First();
 
+        }
+
+        private void ZapisStudenta(object parameter)
+        {
+            if ((parameter != null) && (parameter is Student student) && (Studenti.Contains(student)))
+            {
+                student.JeZapsany = true;
+
+                CommandZapisStudenta.RaiseCanExecuteChanged();
+                CommandOdstranStudenta.RaiseCanExecuteChanged();
+            }
+        }
+        private void OdstranStudenta(object parameter)
+        {
+            if ((parameter != null) && (parameter is Student student) && (Studenti.Contains(student)))
+            {
+                Studenti.Remove(student);
+                SelectedStudent = Studenti.Count > 0 ? Studenti.First() : null;
+            }
+        }
+
+        private void OdstranSelectedStudenta(object parameter)
+        {
+            if (SelectedStudent != null)
+            {
+                Studenti.Remove(SelectedStudent);
+                SelectedStudent = Studenti.Count > 0 ? Studenti.First() : null;
+            }
         }
 
         private bool MuzuZapsatStudenta(object parameter)
@@ -49,23 +80,11 @@ namespace CrossPlatformStudents
             return false;
         }
 
-        private void ZapisStudenta(object parameter)
+        private bool MuzuOdstranitStudenta(object parameter)
         {
-            if ((parameter != null) && (parameter is Student student) && (Studenti.Contains(student)))
-            {
-                student.JeZapsany = true;
-
-                CommandZapisStudenta.RaiseCanExecuteChanged();
-            }
+            // studenta muzu odstranit jen kdyz neni zapsany, tedy muzu ho zapsat
+            return MuzuZapsatStudenta(parameter);
         }
 
-        private void OdstranSelectedStudenta(object parameter)
-        {
-            if (SelectedStudent != null)
-            {
-                Studenti.Remove(SelectedStudent);
-                SelectedStudent = Studenti.Count > 0 ? Studenti.First() : null;
-            }
-        }
     }
 }
