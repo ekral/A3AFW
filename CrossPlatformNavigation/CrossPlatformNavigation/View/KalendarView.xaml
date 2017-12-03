@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatformNavigation.KalendarView"
+             Title="Splátkový kalendář"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Zpět" Command="{Binding CommandZpet}"  />
+            
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Číslo" FontSize="Micro" HorizontalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Úrok" FontSize="Micro" HorizontalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Úmor" FontSize="Micro" HorizontalOptions="Center"  />
+                <Label Grid.Row="0" Grid.Column="3" Text="Dluh" FontSize="Micro" HorizontalOptions="Center"  />
+            </Grid>
+
+            <ListView HasUnevenRows="True" ItemsSource="{Binding Kalendar}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Cislo }" FontSize="Micro" HorizontalOptions="End" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Urok, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Umor, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End" />
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding Dluh, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End" />
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
