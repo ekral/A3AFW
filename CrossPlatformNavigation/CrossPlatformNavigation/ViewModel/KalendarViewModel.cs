@@ -17,7 +17,8 @@ namespace CrossPlatformNavigation
             set { _kalendar = value; OnPropertyChange(); }
         }
 
-        public RelayCommand CommandZpet { get; set; }
+        // jen pro ukazku, tlacitko zpet je v menu
+        public RelayCommand CommandZpet { get; private set; }
 
         private readonly Xamarin.Forms.INavigation navigation;
 

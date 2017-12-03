@@ -41,7 +41,7 @@ namespace CrossPlatformNavigation
             set { _slatka = value; OnPropertyChange(); }
         }
 
-        public RelayCommand CommandKalendar { get; set; }
+        public RelayCommand CommandKalendar { get; private set; }
 
         private readonly Xamarin.Forms.INavigation navigation;
 
