@@ -11,7 +11,7 @@
             
             <Grid HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />

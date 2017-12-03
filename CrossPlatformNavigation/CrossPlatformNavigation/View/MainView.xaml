@@ -13,6 +13,7 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
@@ -25,12 +26,15 @@
                 <Entry Grid.Column="1" Grid.Row="1" Text="{Binding Dluh}" Keyboard="Numeric" Placeholder="Částka" HorizontalOptions="StartAndExpand" />
 
                 <Label Grid.Column="0" Grid.Row="2" Text="Úrok" HorizontalOptions="End" VerticalOptions="Center"   />
-                <Entry Grid.Column="1" Grid.Row="2" Text="{Binding Urok, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Roční úrok v procentech" HorizontalOptions="StartAndExpand" />
+                <Entry Grid.Column="1" Grid.Row="2" Text="{Binding Urok, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Roční úrok v %" HorizontalOptions="StartAndExpand" />
 
                 <Label Grid.Column="0" Grid.Row="3" Text="Počet let" HorizontalOptions="End" VerticalOptions="Center"   />
                 <Entry Grid.Column="1" Grid.Row="3" Text="{Binding PocetLet}" Keyboard="Numeric" Placeholder="Počet let splácení" HorizontalOptions="StartAndExpand" />
 
-                <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Text="Kalendář" Command="{Binding CommandKalendar}" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Grid.Column="0" Grid.Row="4" Text="Začátek" HorizontalOptions="End" VerticalOptions="Center" />
+                <DatePicker Grid.Column="1" Grid.Row="4" x:Name="StartDatePicker" Format="d. M. yyyy" HorizontalOptions="StartAndExpand" />
+                
+                <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="Kalendář" Command="{Binding CommandKalendar}" VerticalOptions="Center" HorizontalOptions="Center" />
 
             </Grid>
         </ScrollView>
