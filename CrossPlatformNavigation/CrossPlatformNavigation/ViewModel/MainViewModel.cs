@@ -52,7 +52,7 @@ namespace CrossPlatformNavigation
             PocetLet = 20;
             Urok = 2;
 
-            CommandKalendar = new RelayCommand(async parameter => await NavigateKalendar(parameter), null );
+            CommandKalendar = new RelayCommand(async parameter => await NavigateKalendar(parameter));
             this.navigation = navigation;
         }
 

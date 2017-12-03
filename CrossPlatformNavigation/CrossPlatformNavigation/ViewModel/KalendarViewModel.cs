@@ -25,7 +25,7 @@ namespace CrossPlatformNavigation
         public KalendarViewModel(Xamarin.Forms.INavigation navigation, double dluh, double rocniUrok, int pocetLet)
         {
             this.navigation = navigation;
-            CommandZpet = new RelayCommand(async parameter => await NavigateZpet(parameter), null);
+            CommandZpet = new RelayCommand(async parameter => await NavigateZpet(parameter));
 
             List<KalendarItem> kalendar = new List<KalendarItem>();
 
