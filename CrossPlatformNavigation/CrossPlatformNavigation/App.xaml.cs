@@ -25,6 +25,8 @@ namespace CrossPlatformNavigation
             // Smazat pokud chci vychozi kulturu na telefonu
             CultureInfo czechCulture = new CultureInfo("cs-CZ");
             CultureInfo.DefaultThreadCurrentCulture = czechCulture;
+
+            //Xamarin.Forms.PlatformConfiguration.iOSSpecific.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
 		protected override void OnStart ()
