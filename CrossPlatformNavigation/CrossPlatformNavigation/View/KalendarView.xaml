@@ -6,7 +6,8 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Zpět" Command="{Binding CommandZpet}"  />
+            <!--Jen pro ukazku jak pouzit PopAsync-->  
+            <!--<Button Text="Zpět" Command="{Binding CommandZpet}"  />-->
             
             <Grid HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
