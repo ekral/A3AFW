@@ -41,6 +41,8 @@ namespace CrossPlatformNavigation
             set { _slatka = value; OnPropertyChange(); }
         }
 
+        public DateTime Datum { get; set; }
+
         public RelayCommand CommandKalendar { get; private set; }
 
         private readonly Xamarin.Forms.INavigation navigation;
@@ -51,7 +53,7 @@ namespace CrossPlatformNavigation
             Dluh = 1000000;
             PocetLet = 20;
             Urok = 2;
-
+            Datum = DateTime.Now;
             CommandKalendar = new RelayCommand(async parameter => await NavigateKalendar(parameter));
             this.navigation = navigation;
         }
@@ -71,7 +73,7 @@ namespace CrossPlatformNavigation
         {
             // Toto bychom meli zjednodusit s vyuzitim ioc a umoznit tak lepsi testovatelnost kodu (vymenili bychom napriklad viewModel za jiny testovaci)
             KalendarView view = new KalendarView();
-            KalendarViewModel viewModel = new KalendarViewModel(view.Navigation, Dluh, Urok, PocetLet);
+            KalendarViewModel viewModel = new KalendarViewModel(view.Navigation, Dluh, Urok, PocetLet, Datum);
             view.BindingContext = viewModel;
 
             await navigation.PushAsync(view);
