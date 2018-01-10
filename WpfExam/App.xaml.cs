@@ -20,7 +20,7 @@ namespace WpfExam
             ViewModel.MainViewModel data = new ViewModel.MainViewModel();
             View.MainView window = new View.MainView() { DataContext = data };
 
-            window.ShowDialog();
+            window.Show();
         }
     }
 }
