@@ -9,9 +9,9 @@
         <TextBlock Text="Text"/>
         <TextBox Text="{Binding Retezec, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock Text="Znak"/>
-        <TextBox  Text="{Binding Znak, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox MaxLength="1" Text="{Binding Znak, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock Text="Počet výskytů"/>
-        <TextBox  Text="{Binding Pocet, UpdateSourceTrigger=PropertyChanged}" />
-        <Button Content="Reset"/>
+        <TextBlock Text="{Binding Pocet, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Reset" Command="{Binding CommandReset}"/>
     </StackPanel>
 </Window>

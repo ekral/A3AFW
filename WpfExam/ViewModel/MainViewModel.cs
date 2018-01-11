@@ -32,8 +32,11 @@ namespace WpfExam.ViewModel
             set { _pocet = value; OnPropertyChanged(); }
         }
 
+        public RelayCommand CommandReset { get; set; }
+
         public MainViewModel()
         {
+            CommandReset = new RelayCommand(Reset);
             Reset();
         }
 
