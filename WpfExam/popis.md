@@ -1,6 +1,6 @@
 ﻿# Popis vzorového úkolu
 
-Příklad obsahuje většinu toho co byste měli znát k testu abyste získali známku A-výborně.
+Příklad obsahuje základy toho co byste měli znát abyste uspěli u testu.
 
 Základní pojmy:
 
