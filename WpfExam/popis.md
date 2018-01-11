@@ -11,7 +11,6 @@ Základní pojmy:
 - **PropertyChange** - event v rozhraní *INotifyPropertyChanged* pomocí kterého ViewModel informuje control ve View, například TextBox, že došlo ke změně property ve ViewModelu a View ji má znovu načíst a zobrazit.
 - **Command** - pomocí commandů může View volat metody ViewModelu a opět na sebe nemusí mít referenci. Commnand je potom třída implementující rozhraní *ICommand*. Ve ViewModelu potom vytváříme property typu Commmand a předáváme jí delegáta na metodu ve ViewModelu, kterou chceme zavolat. Ve View potom například Button na tuto property Command binduje.
 
-
 Základní struktura:
 
 - Vytvoření instance ViewModelu pro MainView (model jsou obecně data v paměti) v souboru *App.xaml.cs* a jeho přiřazení property *DataContext*. Instanci modelu bysme mohli vytvořit i v XAMLu, ale nemohli bysme potom předávat žádné parametry v konstruktoru a používat Dependency Injection a techniku Inversion of Control. V tomto jednoduchém příkladu bysme ale mohli použít oba způsoby.
