@@ -14,12 +14,12 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Číslo" FontSize="Micro" HorizontalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="0" Text="Datum" FontSize="Micro" HorizontalOptions="Center" />
                 <Label Grid.Row="0" Grid.Column="1" Text="Úrok" FontSize="Micro" HorizontalOptions="Center" />
                 <Label Grid.Row="0" Grid.Column="2" Text="Úmor" FontSize="Micro" HorizontalOptions="Center"  />
                 <Label Grid.Row="0" Grid.Column="3" Text="Dluh" FontSize="Micro" HorizontalOptions="Center"  />
@@ -34,12 +34,12 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Cislo }" FontSize="Micro" HorizontalOptions="End" />
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Cislo, StringFormat='{0:dd/MM/yy}'}" FontSize="Micro" HorizontalOptions="End" />
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Urok, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End"/>
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding Umor, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End" />
                                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding Dluh, StringFormat='{0:C}' }" FontSize="Micro" HorizontalOptions="End" />

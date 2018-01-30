@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfExam.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfExam.View"
+        mc:Ignorable="d">
+    <StackPanel>
+        <TextBlock Text="Text"/>
+        <TextBox Text="{Binding Retezec, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Text="Znak"/>
+        <TextBox MaxLength="1" Text="{Binding Znak, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Text="Počet výskytů"/>
+        <TextBlock Text="{Binding Pocet, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Reset" Command="{Binding CommandReset}"/>
+    </StackPanel>
+</Window>

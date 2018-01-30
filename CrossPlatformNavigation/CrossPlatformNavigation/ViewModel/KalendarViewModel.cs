@@ -22,7 +22,7 @@ namespace CrossPlatformNavigation
 
         private readonly Xamarin.Forms.INavigation navigation;
 
-        public KalendarViewModel(Xamarin.Forms.INavigation navigation, double dluh, double rocniUrok, int pocetLet)
+        public KalendarViewModel(Xamarin.Forms.INavigation navigation, double dluh, double rocniUrok, int pocetLet, DateTime zacatek)
         {
             this.navigation = navigation;
             CommandZpet = new RelayCommand(async parameter => await NavigateZpet(parameter));
@@ -41,7 +41,9 @@ namespace CrossPlatformNavigation
 
                 dluh -= umor;
 
-                kalendar.Add(new KalendarItem(i, splatka, urok, umor, dluh));
+                zacatek = zacatek.AddMonths(1);
+                kalendar.Add(new KalendarItem(zacatek, splatka, urok, umor, dluh));
+                
             }
 
             Kalendar = kalendar;

@@ -6,13 +6,13 @@ namespace CrossPlatformNavigation
 {
     class KalendarItem
     {
-        public int Cislo { get; }
+        public DateTime Cislo { get; }
         public double Splatka { get; }
         public double Urok { get; }
         public double Umor { get; }
         public double Dluh { get; }
 
-        public KalendarItem(int cislo, double splatka, double urok, double umor, double dluh)
+        public KalendarItem(DateTime cislo, double splatka, double urok, double umor, double dluh)
         {
             Cislo = cislo;
             Splatka = splatka;
