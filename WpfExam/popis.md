@@ -18,7 +18,7 @@ Základní struktura:
     ViewModel.MainViewModel data = new ViewModel.MainViewModel();
     View.MainView window = new View.MainView() { DataContext = data };
     ```
-- Bindovaní v souboru *MainView.xaml*, kdy pomocí markup extension Binding říkáme, že má *TextBox* zobrazit a měnit hodnotu property *Rezetec* objektu v property *DataContext* (připomínám, že ta má referenci na model, což jsme uděli v předchozím kroku). Zápis *UpdateSourceTrigger=PropertyChanged* znamená, že *TextBox* bude měnit hodnotu property *Retezec* pokaždé hned, jak se změní property *Text*.
+- Bindovaní v souboru *MainView.xaml*. Pomocí markup extension Binding říkáme, že má *TextBox* zobrazit a měnit hodnotu property *Rezetec* objektu v property *DataContext* (připomínám, že ta má referenci na model, což jsme udělali v předchozím kroku). Zápis *UpdateSourceTrigger=PropertyChanged* znamená, že *TextBox* bude měnit hodnotu property *Retezec* pokaždé hned, jak se změní property *Text*.
 
      ```XAML
      <TextBox Text="{Binding Retezec, UpdateSourceTrigger=PropertyChanged}" />
